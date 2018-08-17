@@ -11,9 +11,10 @@
 cc.Class({
     extends: cc.Component,
 
-    /// 在这里进行属性的声明和 编辑器内部的声明
-    /// javascrip  内置的属性可以 直接进行赋值
-    properties: {    
+
+
+    /// 字体组件进行编辑学习
+    properties: {
         // foo: {
         //     // ATTRIBUTES:
         //     default: null,        // The default value will be used only when the component attaching
@@ -29,36 +30,30 @@ cc.Class({
         //         this._bar = value;
         //     }
         // },
-
-       UI_show : cc.Label,
-       UI_Node : cc.Node
-
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     // onLoad () {},
 
- /*  start: function () 
-     {
-         var label  = this.getComponent(cc.Label);
-         
-         cc.error("输出文件测试"+label);
+    start () {
+        var TableUI = this.getComponent(cc.Label);
+        var TabelColor = this.getComponent(cc.LabelOutline);
+       
+       if(TableUI != null)
+       {
+           TableUI.string ="在这里进行更改";
+       }
+       if(TabelColor  != null)
+       {
+           cc.log("终于等到你，还好我没放弃");
+           TabelColor.color =  cc.Color.RED;
+       }
+       else 
+       {
+            cc.log("没有找到相关组件");
+       }
     },
-*/
 
-  /*start   ()   // 更改 字体的内容和 字体大小
-     {
-      var label  = this.UI_show.string; 
-        if (label) {
-           
-         cc.error("测试新的写法"+label); this.UI_show.string = " UI组件更改完成"; this.UI_show.FontSize  =  60; } 
-                }, */  
-   start: function()
-   {
-    // var node  = this.node;   
-    //var label  = this.getComponent(cc.Label);
-    //var text =  this.name + "dddd";
-
-    },// update (dt) {},
+    // update (dt) {},
 });

@@ -45,10 +45,27 @@ cc.Class({
 
     // onLoad () {},
 
-    start: function start() {}
-}
+    /*  start: function () 
+        {
+            var label  = this.getComponent(cc.Label);
+            
+            cc.error("输出文件测试"+label);
+       },
+    */
 
-// update (dt) {},
-);
+    /*start   ()   // 更改 字体的内容和 字体大小
+       {
+        var label  = this.UI_show.string; 
+          if (label) {
+             
+           cc.error("测试新的写法"+label); this.UI_show.string = " UI组件更改完成"; this.UI_show.FontSize  =  60; } 
+                  }, */
+    start: function start() {
+        // var node  = this.node;   
+        //var label  = this.getComponent(cc.Label);
+        //var text =  this.name + "dddd";
+
+    } // update (dt) {},
+});
 
 cc._RF.pop();
