@@ -25,12 +25,12 @@
     "relativePath": "prefab"
   },
   "98b17058-a600-4dcb-9b7b-5ac441247b7a": {
-    "asset": 1534407204294,
+    "asset": 1534755534831,
     "meta": 1534404192623,
     "relativePath": "Script"
   },
   "d4bc958f-0d2c-44e0-bacc-31406b710763": {
-    "asset": 1534412830118,
+    "asset": 1534493683795,
     "meta": 1534412830068,
     "relativePath": "Scene"
   },
@@ -291,7 +291,7 @@
   },
   "c6b5fd13-6a7f-4187-8716-1189e5d13c27": {
     "asset": 1526930962000,
-    "meta": 1534493594705,
+    "meta": 1534730471964,
     "relativePath": "textures\\PurpleMonster.png"
   },
   "80c7b1e7-1df7-4fc7-94e5-c530738420ed": {
@@ -300,13 +300,33 @@
     "relativePath": "textures\\star.png"
   },
   "a34071e5-f5e0-4a23-bb39-b1505487bc01": {
-    "asset": 1534501212192,
-    "meta": 1534501212217,
+    "asset": 1534759625266,
+    "meta": 1534759625298,
     "relativePath": "Scene\\game.fire"
   },
   "dd475f51-083c-4566-b669-9616082c0845": {
-    "asset": 1534501100875,
-    "meta": 1534501204615,
+    "asset": 1534742390952,
+    "meta": 1534742392454,
     "relativePath": "Script\\player.js"
+  },
+  "252cd20e-9aa9-4f07-a0ca-31adfc69dab6": {
+    "asset": 1534742852198,
+    "meta": 1534742842999,
+    "relativePath": "perfab"
+  },
+  "23f73872-5fbf-4cc9-ae20-3f84667ef793": {
+    "asset": 1534742885183,
+    "meta": 1534742885223,
+    "relativePath": "perfab\\star.prefab"
+  },
+  "fc149826-1b95-4b8b-8768-7c17a349fa35": {
+    "asset": 1534755176613,
+    "meta": 1534755527964,
+    "relativePath": "Script\\Star.js"
+  },
+  "8b3bda95-02cc-4798-889f-4f27902832d3": {
+    "asset": 1534759554556,
+    "meta": 1534759559177,
+    "relativePath": "Script\\Game.js"
   }
 }
