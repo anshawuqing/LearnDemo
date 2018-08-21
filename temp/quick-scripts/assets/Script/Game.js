@@ -32,21 +32,36 @@ cc.Class({
             default: null,
             type: cc.Node
         },
-
         // 设置player  的属性
         player: {
             default: null,
             type: cc.Node
+        },
+        scoreDisplay: {
+            default: null,
+            type: cc.Label
+        },
+
+        /// 声音 播放组件
+        scoreAudio: {
+            default: null,
+            type: cc.AudioClip
         }
+
     },
 
     // LIFE-CYCLE CALLBACKS:
 
     onLoad: function onLoad() {
+        //初始化计时器 
+        this.timer = 0;
+        this.starDuration = 0;
         //获取 地平面的 Y轴 坐标
         this.groundY = this.ground.y + this.ground.height / 2;
         //生成一个新的星星
         this.spawnNewStar();
+        // 初始化积分信息
+        this.score = 0;
     },
 
     spawnNewStar: function spawnNewStar() {
@@ -56,8 +71,11 @@ cc.Class({
         this.node.addChild(newStar);
         // 为 星星设置一个随机位置
         newStar.setPosition(this.getNewStarPosition());
-
+        //为 星星添加新的组件    
         newStar.getComponent('Star').game = this;
+        // 重置计时器，根据消失时间范围 随机取一个值
+        this.starDuration = this.minStartDuration + Math.random() * (this.maxStartDuration - this.minStartDuration);
+        this.timer = 0;
     },
 
     /// 得到卫星新的 组标点信息
@@ -75,11 +93,35 @@ cc.Class({
         return cc.v2(randX, randY);
     },
 
-    start: function start() {}
-}
+    start: function start() {},
 
-// update (dt) {},
-);
+
+    update: function update(dt) {
+        //每帧更新计时器 超过限度还没有生成新的星星
+        //就会调用失败的逻辑
+        if (this.timer > this.starDuration) {
+            this.gameOver();
+            return;
+        }
+
+        this.timer += dt;
+    },
+
+    /// 获取积分信息
+    gainScore: function gainScore() {
+        this.score += 1;
+        //更新UI 界面文字
+        this.scoreDisplay.string = "Score" + this.score;
+        //播放得分音效, 当获取积分时进行 音效的播放
+        cc.audioEngine.playEffect(this.scoreAudio, false);
+    },
+
+    ///
+    gameOver: function gameOver() {
+        this.player.stopAllActions(); // 停止节点上的所有Action 
+        cc.director.loadScene("game"); // 重新加载游戏场景
+    }
+});
 
 cc._RF.pop();
         }

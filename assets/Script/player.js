@@ -20,7 +20,13 @@ cc.Class({
      // 最大移动速度
      maxMoveSped: 0,
      // 加速度
-     accel:0
+     accel:0,
+     // 跳跃音效资源
+     jumpAudio: 
+     {
+          default:null,
+          type: cc.AudioClip
+     },
       
     },
 
@@ -41,8 +47,6 @@ cc.Class({
     ///  注册订阅事件  
     cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN,this.onkeydown,this);
     cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP,this.onkeyUp,this);
-    
-
 
     },
 
@@ -56,14 +60,23 @@ cc.Class({
       var JumpUp = cc.moveBy(this.jumbDuration,cc.v2(0,this.jumbHeight)).easing(cc.easeCubicActionOut());
      // 下落 
      var   jumpDown = cc.moveBy(this.jumbDuration, cc.v2(0,- this.jumbHeight)).easing(cc.easeCubicActionIn());
-     //  不断重复 
-    return cc.repeatForever(cc.sequence(JumpUp,jumpDown));
-   },
+    // 增加一个声音回调，用于在 动作结束时调用我们定义的其他方法
+      var callback = cc.callFunc(this.playJumpSound,this);
    
+     //  不断重复 
+    return cc.repeatForever(cc.sequence(JumpUp,jumpDown,callback));
+   },
+
+   /// 声音播放函数
+    playJumpSound: function()
+    {
+       //调用声音播放声音
+       cc.audioEngine.playEffect(this.jumpAudio,false);
+    },
+
     // 当鼠标按下去的事件
     onkeydown (event)
     {
-       console.log("测试——按下—————事件"+event.keyCode);
         switch(event.keyCode)
         {
           case 68:
@@ -75,10 +88,8 @@ cc.Class({
         }
     },
 
-
     onkeyUp (event)
     {
-       console.log("测试———抬起—————事件"+event.keyCode);
        switch(event.keyCode)
         {
            case  68:
