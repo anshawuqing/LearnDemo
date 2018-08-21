@@ -44,9 +44,9 @@
                   "node-library",
                   "scene"
                 ],
-                "height": 343,
+                "height": 347,
                 "type": "panel",
-                "width": 845.984375
+                "width": 821
               },
               {
                 "active": 0,
@@ -54,14 +54,14 @@
                   "console",
                   "timeline"
                 ],
-                "height": 270,
+                "height": 266,
                 "type": "panel",
-                "width": 845.984375
+                "width": 821
               }
             ],
             "height": 616,
             "type": "dock-v",
-            "width": 845.984375
+            "width": 821
           },
           {
             "active": 0,
@@ -70,7 +70,7 @@
             ],
             "height": 616,
             "type": "panel",
-            "width": 304
+            "width": 329
           }
         ],
         "type": "dock-h"
