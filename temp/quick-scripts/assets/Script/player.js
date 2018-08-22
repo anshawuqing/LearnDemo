@@ -76,7 +76,6 @@ cc.Class({
 
     // 当鼠标按下去的事件
     onkeydown: function onkeydown(event) {
-
         switch (event.keyCode) {
             case 68:
                 this.accRight = true;
@@ -87,7 +86,6 @@ cc.Class({
         }
     },
     onkeyUp: function onkeyUp(event) {
-
         switch (event.keyCode) {
             case 68:
                 this.accRight = false;
