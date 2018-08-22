@@ -21,3 +21,14 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+*.js
+library/imports/dd/dd475f51-083c-4566-b669-9616082c0845.js.map
+*.map
+library/imports/dd/dd475f51-083c-4566-b669-9616082c0845.js.map
+temp/quick-scripts/assets/Script/player.js
+temp/quick-scripts/assets/Script/player.js
+*.map
+temp/quick-scripts/assets/Script/player.js
+temp/quick-scripts/assets/Script/player.js.map
+*.js
+temp/quick-scripts/assets/Script/player.js
